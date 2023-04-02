@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TvShowsAppMVVM</string>
+    <string name="read_more">Read more</string>
+    <string name="read_less">Read less</string>
+</resources>

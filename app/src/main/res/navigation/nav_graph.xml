@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tvShowsFragment">
+
+    <fragment
+        android:id="@+id/tvShowsFragment"
+        android:name="com.example.tvshowsappmvvm.features.tv_shows.TvShowsFragment"
+        android:label="tv_shows"
+        tools:layout="@layout/fragment_tv_shows" >
+        <action
+            android:id="@+id/action_tvShowsFragment_to_searchTvShowFragment"
+            app:destination="@id/searchTvShowFragment" />
+        <action
+            android:id="@+id/action_tvShowsFragment_to_tvShowDetails"
+            app:destination="@id/tvShowDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchTvShowFragment"
+        android:name="com.example.tvshowsappmvvm.features.search_tv_shows.SearchTvShowFragment"
+        android:label="Search Tv Shows"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchTvShowFragment_to_tvShowDetails"
+            app:destination="@id/tvShowDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowDetails"
+        android:name="com.example.tvshowsappmvvm.features.tv_show_details.TvShowDetails"
+        android:label="fragment_tv_shows_details"
+        tools:layout="@layout/fragment_tv_shows_details" >
+        <argument
+            android:name="data_object"
+            app:argType="com.example.tvshowsappmvvm.api.TvShow" />
+    </fragment>
+</navigation>
